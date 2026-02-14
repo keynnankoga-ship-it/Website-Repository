@@ -1,42 +1,77 @@
-// Smooth Scrolling Navigation
-const smoothScroll = (target) => {
-    document.querySelector(target).scrollIntoView({
-        behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", () => {
+
+  const works = document.querySelectorAll(".work-item");
+  const buttons = document.querySelectorAll(".filter-buttons button");
+  const search = document.getElementById("searchInput");
+
+  /* FILTER */
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+
+      works.forEach(item => {
+        if (filter === "all" || item.dataset.category === filter) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+
     });
-};
+  });
 
-// Event listener for navigation links
-const navLinks = document.querySelectorAll('a[href^="#"]');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = link.getAttribute('href');
-        smoothScroll(target);
+  /* SEARCH */
+  search.addEventListener("input", () => {
+    const term = search.value.toLowerCase();
+
+    works.forEach(item => {
+      const text = item.innerText.toLowerCase();
+      item.style.display = text.includes(term) ? "block" : "none";
     });
-});
+  });
 
-// CTA Button Functionality
-const ctaButton = document.getElementById('cta-button');
-ctaButton.addEventListener('click', () => {
-    alert('CTA button clicked!'); // Replace with desired functionality
-});
+  /* SUBSTACK AUTO SYNC */
+  const substackFeed = "https://koyokk.substack.com/feed";
 
-// Form Submission Handling
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    // Implement AJAX request to submit the form data
-    fetch('submit_form_url', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
+  fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(substackFeed)}`)
+    .then(res => res.json())
     .then(data => {
-        console.log('Success:', data);
-        // Handle success response
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(data.contents, "text/xml");
+      const items = xml.querySelectorAll("item");
+
+      const grid = document.querySelector(".works-grid");
+
+      items.forEach(post => {
+
+        const title = post.querySelector("title")?.textContent;
+        const link = post.querySelector("link")?.textContent;
+        const desc = post.querySelector("description")?.textContent;
+
+        if (!title || !link) return;
+
+        const card = document.createElement("div");
+        card.className = "work-item";
+        card.dataset.category = "substack";
+
+        card.innerHTML = `
+          <h3>${title}</h3>
+          <p class="work-category">Category: Substack</p>
+          <p class="work-description">${desc?.slice(0, 160) || ""}...</p>
+          <a href="${link}" target="_blank" class="read-more">Read More →</a>
+        `;
+
+        grid.prepend(card);
+
+      });
+
     })
-    .catch((error) => {
-        console.error('Error:', error);
+    .catch(() => {
+      console.log("Substack sync failed");
     });
+
 });
