@@ -1,1 +1,143 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n</head>\n<body>\n    <h1>Hello, World!</h1>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koyo Koga - Writing Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Koyo Koga</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#portfolio" class="nav-link">Works</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Koyo Koga</h1>
+            <p class="tagline">Word Wrangler & Chaos Whisperer</p>
+            <a href="#portfolio" class="cta-button">Explore My Works</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="about-text">
+                I'm a word wrangler and chaos whisperer, turning caffeine, scattered thoughts, and occasional bad puns into stories that try to be clever, sometimes succeed, and always entertain. I overthink, overuse metaphors, and occasionally make dangling participles dance but hey, that's part of the fun. Writing is my way of turning my inner chaos into something the world can read, laugh at, and maybe even relate to.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio/Works Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Writing Works</h2>
+            <div class="works-grid">
+                <!-- Work Item 1 -->
+                <div class="work-item">
+                    <h3>Your First Story Title</h3>
+                    <p class="work-category">Category: Fiction</p>
+                    <p class="work-description">Add your story description here. What's it about? What makes it special?</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+
+                <!-- Work Item 2 -->
+                <div class="work-item">
+                    <h3>Your Second Story Title</h3>
+                    <p class="work-category">Category: Essay</p>
+                    <p class="work-description">Add your story description here. What's it about? What makes it special?</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+
+                <!-- Work Item 3 -->
+                <div class="work-item">
+                    <h3>Your Third Story Title</h3>
+                    <p class="work-category">Category: Poetry</p>
+                    <p class="work-description">Add your story description here. What's it about? What makes it special?</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+
+                <!-- Work Item 4 -->
+                <div class="work-item">
+                    <h3>Your Fourth Story Title</h3>
+                    <p class="work-category">Category: Short Story</p>
+                    <p class="work-description">Add your story description here. What's it about? What makes it special?</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="contact-intro">Have a question? Want to collaborate? I'd love to hear from you!</p>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="keynnankoga@gmail.com" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/keynnankoga-ship-it" target="_blank" class="social-link" title="GitHub">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://twitter.com/KoyoKeynnan" target="_blank" class="social-link" title="Twitter">
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://linkedin.com/kenan-koga" target="_blank" class="social-link" title="LinkedIn">
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://instagram.com/keynn.an" target="_blank" class="social-link" title="Instagram">
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Koyo Koga. All rights reserved. | Word Wrangler & Chaos Whisperer</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
