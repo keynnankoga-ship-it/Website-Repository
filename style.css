@@ -17,15 +17,23 @@ body {
   background: white;
   padding: 18px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2563eb;
+  text-decoration: none;
 }
 
 .nav-menu {
   display: flex;
   gap: 20px;
   list-style: none;
+  margin-left: auto;   /* pushes links to the right */
 }
 
 .nav-link {
@@ -38,6 +46,7 @@ body {
 .nav-link:hover {
   color: #2563eb;
 }
+
 
 /* HERO SECTION */
 .hero {
