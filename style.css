@@ -48,6 +48,19 @@ body {
   background: #fff;
 }
 
+.hero {
+  background-image: url('path/to/your‑hero‑image.jpg'); /* your image */
+  background-size: cover;        /* cover entire section */
+  background-position: center;   /* center the image */
+  height: 60vh;                  /* adjust height here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+
 .hero-content {
   display: flex;
   max-width: 900px;
