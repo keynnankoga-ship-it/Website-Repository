@@ -59,18 +59,16 @@ body {
 }
 
 .hero-content {
-  display: flex;
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
   background: white;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  overflow: hidden;
-  align-items: center;
-  gap: 2rem;
-  padding: 20px;
-  flex-wrap: wrap;
+  padding: 40px;
+  margin: auto;
+  text-align: center;
 }
+
 
 .hero-image {
   flex: 1 1 300px; /* flexible width with minimum */
