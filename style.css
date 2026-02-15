@@ -153,6 +153,7 @@ section {
   border-radius: 12px;
   border: 1px solid #eee;
   transition: 0.25s;
+  text-align: center;
 }
 
 .work-item:hover {
@@ -160,11 +161,21 @@ section {
   box-shadow: 0 10px 22px rgba(0,0,0,0.08);
 }
 
+/* NEW: WORK ICON */
+.work-icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
 .work-item h3 {
   font-size: 1.05rem;
   margin-bottom: 8px;
 }
 
+/* CATEGORY */
 .work-category {
   font-size: 0.85rem;
   color: #2563eb;
@@ -172,12 +183,14 @@ section {
   font-weight: 600;
 }
 
+/* DESCRIPTION */
 .work-description {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 12px;
 }
 
+/* READ MORE */
 .read-more {
   text-decoration: none;
   font-weight: 600;
@@ -186,6 +199,43 @@ section {
 
 .read-more:hover {
   text-decoration: underline;
+}
+
+/* PORTFOLIO CONTROLS */
+.portfolio-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+#searchInput {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  border: none;
+  background: #eef2ff;
+  color: #2563eb;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background: #2563eb;
+  color: white;
 }
 
 /* CONTACT */
@@ -213,6 +263,7 @@ section {
   min-width: 280px;
 }
 
+/* SOCIAL */
 .social-links {
   width: 240px;
 }
@@ -220,14 +271,23 @@ section {
 .social-icons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 14px;
+  margin-top: 12px;
 }
 
 .social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   color: #2563eb;
   font-weight: 500;
+}
+
+/* NEW: SOCIAL ICON */
+.social-link img {
+  width: 22px;
+  height: 22px;
 }
 
 .social-link:hover {
@@ -261,46 +321,5 @@ section {
 
   .nav-menu {
     gap: 16px;
-    /* PORTFOLIO CONTROLS */
-.portfolio-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-
-#searchInput {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.filter-buttons button {
-  border: none;
-  background: #eef2ff;
-  color: #2563eb;
-  padding: 8px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.filter-buttons button.active {
-  background: #2563eb;
-  color: white;
-}
-
-.filter-buttons button:hover {
-  background: #2563eb;
-  color: white;
-}
-
   }
 }
