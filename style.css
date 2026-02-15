@@ -143,10 +143,11 @@ section {
 
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 26px;
 }
 
+/* WORK CARD */
 .work-item {
   background: white;
   padding: 22px;
@@ -154,6 +155,11 @@ section {
   border: 1px solid #eee;
   transition: 0.25s;
   text-align: center;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .work-item:hover {
@@ -161,18 +167,30 @@ section {
   box-shadow: 0 10px 22px rgba(0,0,0,0.08);
 }
 
-/* NEW: WORK ICON */
+/* ICON CONTAINER */
 .work-icon {
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ICON IMAGE */
+.work-icon img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  margin-bottom: 10px;
+  display: block;
 }
 
 /* TITLE */
 .work-item h3 {
   font-size: 1.05rem;
   margin-bottom: 8px;
+  line-height: 1.35;
 }
 
 /* CATEGORY */
@@ -195,6 +213,7 @@ section {
   text-decoration: none;
   font-weight: 600;
   color: #2563eb;
+  margin-top: auto;
 }
 
 .read-more:hover {
@@ -284,7 +303,6 @@ section {
   font-weight: 500;
 }
 
-/* NEW: SOCIAL ICON */
 .social-link img {
   width: 22px;
   height: 22px;
